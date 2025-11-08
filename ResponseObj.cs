@@ -4,88 +4,91 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class nobelPrizes
-{
-    [JsonProperty("firstName")]
-    public string firstName { get; set; }
+    /// <summary>
+    /// NobelPrizes data
+    /// </summary>
+    public class NobelPrizes
+    {
+        [JsonProperty("firstName")]
+        public string FirstName { get; set; }
 
-    [JsonProperty("lastName")]
-    public string lastName { get; set; }
+        [JsonProperty("lastName")]
+        public string LastName { get; set; }
 
-    [JsonProperty("born")]
-    public string born { get; set; }
+        [JsonProperty("born")]
+        public string Born { get; set; }
 
-    [JsonProperty("died")]
-    public string died { get; set; }
+        [JsonProperty("died")]
+        public string Died { get; set; }
 
-    [JsonProperty("countryborn")]
-    public string countryborn { get; set; }
+        [JsonProperty("countryborn")]
+        public string Countryborn { get; set; }
 
-    [JsonProperty("countrybornCode")]
-    public string countrybornCode { get; set; }
+        [JsonProperty("countrybornCode")]
+        public string CountrybornCode { get; set; }
 
-    [JsonProperty("born city")]
-    public string borncity { get; set; }
+        [JsonProperty("born city")]
+        public string Borncity { get; set; }
 
-    [JsonProperty("diedCountry")]
-    public string diedCountry { get; set; }
+        [JsonProperty("diedCountry")]
+        public string DiedCountry { get; set; }
 
-    [JsonProperty("diedCountryCode")]
-    public string diedCountryCode { get; set; }
+        [JsonProperty("diedCountryCode")]
+        public string DiedCountryCode { get; set; }
 
-    [JsonProperty("diedCity")]
-    public string diedCity { get; set; }
+        [JsonProperty("diedCity")]
+        public string DiedCity { get; set; }
 
-    [JsonProperty("gender")]
-    public string gender { get; set; }
+        [JsonProperty("gender")]
+        public string Gender { get; set; }
 
-    [JsonProperty("year")]
-    public string year { get; set; }
+        [JsonProperty("year")]
+        public string Year { get; set; }
 
-    [JsonProperty("category")]
-    public string category { get; set; }
+        [JsonProperty("category")]
+        public string Category { get; set; }
 
-    [JsonProperty("motivation")]
-    public string motivation { get; set; }
+        [JsonProperty("motivation")]
+        public string Motivation { get; set; }
 
-    [JsonProperty("organization")]
-    public string organization { get; set; }
+        [JsonProperty("organization")]
+        public string Organization { get; set; }
 
-    [JsonProperty("organizationCity")]
-    public string organizationCity { get; set; }
+        [JsonProperty("organizationCity")]
+        public string OrganizationCity { get; set; }
 
-    [JsonProperty("organizationCountry")]
-    public string organizationCountry { get; set; }
+        [JsonProperty("organizationCountry")]
+        public string OrganizationCountry { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("count")]
+        public int Count { get; set; }
 
-public class data
-{
-    [JsonProperty("count")]
-    public int count { get; set; }
+        [JsonProperty("filteredOn")]
+        public string[] FilteredOn { get; set; }
 
-    [JsonProperty("filteredOn")]
-    public string[] filteredOn { get; set; }
+        [JsonProperty("nobelPrizes")]
+        public NobelPrizes[] NobelPrizes { get; set; }
 
-    [JsonProperty("nobelPrizes")]
-    public nobelPrizes[] nobelPrizes { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-}
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
